@@ -24,11 +24,7 @@ public class StudentController {
     @Autowired
     BookDaO bookService;
     @Autowired
-    LibrarianDaO librarianService;
-    @Autowired
     StudentDaO studentService;
-    @Autowired
-    LibraryDaO libraryDaO;
     @Autowired
     BCryptPasswordEncoder encoder;
 
