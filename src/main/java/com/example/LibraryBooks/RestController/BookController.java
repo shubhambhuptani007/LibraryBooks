@@ -7,7 +7,6 @@ import com.example.LibraryBooks.DaO.StudentDaO;
 import com.example.LibraryBooks.Entity.*;
 import com.example.LibraryBooks.Exceptions.BookExceptions.BookAlreadyExistException;
 import com.example.LibraryBooks.Exceptions.BookExceptions.BookNotFoundException;
-import com.example.LibraryBooks.Exceptions.LibrarianException.NoSuchLibrarianFound;
 import com.example.LibraryBooks.Exceptions.LibraryException.NoSuchLibraryPresent;
 import com.example.LibraryBooks.Exceptions.StudentException.NoSuchStudentFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +37,7 @@ public class BookController {
         throw new BookNotFoundException("Book Not Found");
     }
 
-    @GetMapping("/allBooks")
+    @GetMapping("/getAllBooks")
     public ResponseEntity getAllBooks(){
         Optional<List<Book>> optionalBookList = Optional.ofNullable(bookService.findAll());
         if(optionalBookList.isPresent()){

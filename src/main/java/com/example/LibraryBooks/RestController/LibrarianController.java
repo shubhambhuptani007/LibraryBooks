@@ -27,7 +27,7 @@ public class LibrarianController {
     BCryptPasswordEncoder encoder;
     @Autowired
     LibrarianDaO librarianService;
-    @GetMapping("getLibrarian/{name}")
+    @GetMapping("/getLibrarian/{name}")
     public ResponseEntity getLibrarian(@PathVariable("name") String name){
         Optional<Librarian> librarianOptional = librarianService.findById(name);
         if(!librarianOptional.isPresent()){
